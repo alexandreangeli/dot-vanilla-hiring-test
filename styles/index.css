@@ -26,11 +26,13 @@ html {
 }
 
 .page > * {
-  padding: 0px 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media screen and (min-width: 900px) {
   .page > * {
-    padding: 0 max(calc((100vw - 1336px) / 2), 100px);
+    padding-left: 0 Max(calc((100vw - 1336px) / 2), 100px);
+    padding-right: 0 Max(calc((100vw - 1336px) / 2), 100px);
   }
 }
 
