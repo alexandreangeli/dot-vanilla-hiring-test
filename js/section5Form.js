@@ -21,7 +21,7 @@ function formSubmit(event) {
 }
 
 function mask(event, input, maskType) {
-  alert(event);
+  alert(JSON.stringify(event));
   if (
     event.key.length === 1 &&
     event.altKey == false &&
