@@ -21,6 +21,7 @@ function formSubmit(event) {
 }
 
 function mask(event, input, maskType) {
+  alert(event);
   if (
     event.key.length === 1 &&
     event.altKey == false &&

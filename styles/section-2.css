@@ -61,11 +61,13 @@
 
 .section-2-carousel-page {
   min-width: 100%;
-  display: grid;
-  grid-template-columns: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 @media screen and (min-width: 900px) {
   .section-2-carousel-page {
+    display: grid;
+    padding: 0;
     grid-template-columns: 33.33% 33.33% 33.33%;
   }
 }

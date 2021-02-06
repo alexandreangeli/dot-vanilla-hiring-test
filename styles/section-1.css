@@ -2,7 +2,6 @@
   position: relative;
   background-color: var(--gray-2);
   z-index: 0;
-  padding: 0 60px;
   height: 315px;
 }
 @media screen and (min-width: 900px) {
