@@ -1,0 +1,110 @@
+#section-2 {
+  padding-top: 20px;
+  padding-bottom: 90px;
+  background-color: var(--gray-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+@media screen and (min-width: 900px) {
+  #section-2 {
+    padding-top: 35px;
+    padding-bottom: 60px;
+  }
+}
+
+.section-2-carousel-arrow {
+  cursor: pointer;
+  object-fit: none;
+  position: absolute;
+  bottom: 30px;
+}
+@media screen and (min-width: 900px) {
+  .section-2-carousel-arrow {
+    position: relative;
+    bottom: 100px;
+  }
+}
+
+.section-2-carousel-arrow-left-white {
+  left: 28%;
+}
+@media screen and (min-width: 900px) {
+  .section-2-carousel-arrow-left-white {
+    left: 0;
+  }
+}
+
+.section-2-carousel-arrow-right-white {
+  right: 28%;
+}
+@media screen and (min-width: 900px) {
+  .section-2-carousel-arrow-right-white {
+    right: 0;
+  }
+}
+
+.section-2-carousel-container {
+  display: flex;
+  overflow: auto;
+  scroll-behavior: smooth;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.section-2-carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.section-2-carousel-page {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+}
+@media screen and (min-width: 900px) {
+  .section-2-carousel-page {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+  }
+}
+
+.section-2-carousel-page-active {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.section-2-carousel-card {
+  margin: 0px;
+}
+@media screen and (min-width: 900px) {
+  .section-2-carousel-card {
+    margin: 15px;
+  }
+}
+
+.section-2-carousel-card-img {
+  box-sizing: border-box;
+  width: 100%;
+  border: 10px var(--gray-3) solid;
+  max-width: 280px2;
+}
+
+.section-2-carousel-card-title {
+  padding: 20px 0;
+  font-weight: 700;
+  color: var(--white);
+  font-size: 24px;
+}
+@media screen and (min-width: 900px) {
+  .section-2-carousel-card-title {
+    padding: 20px 0;
+  }
+}
+
+.section-2-carousel-card-description {
+  font-weight: 400;
+  color: var(--white);
+  font-size: 16px;
+}

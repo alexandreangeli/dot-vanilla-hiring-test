@@ -56,8 +56,8 @@ let section2CarouselItems = [
 ];
 
 let currentPage = 1;
-const cardsPerPage = 3;
-const lastPage = Math.ceil(section2CarouselItems.length / cardsPerPage);
+let cardsPerPage = 3;
+let lastPage = Math.ceil(section2CarouselItems.length / cardsPerPage);
 
 function nextSection2CarouselPage() {
   updateSection2Carousel(currentPage + 1);
@@ -84,9 +84,13 @@ function updateSection2Carousel(page) {
 }
 
 function startSection2Carousel() {
+  cardsPerPage = window.innerWidth >= 900 ? 3 : 1;
+  lastPage = Math.ceil(section2CarouselItems.length / cardsPerPage);
+
   let carouselContainer = document.querySelector(
     ".section-2-carousel-container"
   );
+  carouselContainer.innerHTML = "";
 
   let carouselPages = [];
   for (let i = 0; i < section2CarouselItems.length; i += cardsPerPage) {
@@ -106,12 +110,12 @@ function startSection2Carousel() {
       cardImg.src = carouselItem.img;
       card.appendChild(cardImg);
 
-      let cardTitle = document.createElement("p");
+      let cardTitle = document.createElement("div");
       cardTitle.classList.add("section-2-carousel-card-title");
       cardTitle.textContent = carouselItem.title;
       card.appendChild(cardTitle);
 
-      let cardDescription = document.createElement("p");
+      let cardDescription = document.createElement("div");
       cardDescription.classList.add("section-2-carousel-card-description");
       cardDescription.textContent = carouselItem.description;
       card.appendChild(cardDescription);
@@ -124,5 +128,9 @@ function startSection2Carousel() {
 
   updateSection2Carousel(currentPage);
 }
+
+window.onresize = function (event) {
+  startSection2Carousel();
+};
 
 startSection2Carousel();

@@ -1,0 +1,41 @@
+* {
+  font-family: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+::-webkit-input-placeholder {
+  font-family: Helvetica;
+}
+:-moz-placeholder {
+  font-family: Helvetica;
+}
+::-moz-placeholder {
+  font-family: Helvetica;
+}
+:-ms-input-placeholder {
+  font-family: Helvetica;
+}
+
+.page {
+  display: unset;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 1366px;
+}
+
+.page > * {
+  padding: 0px 10px;
+}
+@media screen and (min-width: 900px) {
+  .page > * {
+    padding: 0px 100px;
+  }
+}
+
+*:invalid {
+  box-shadow: none;
+}

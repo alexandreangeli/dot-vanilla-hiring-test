@@ -1,0 +1,137 @@
+#section-5 {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    color-stop(50%, var(--gray-3)),
+    color-stop(50%, var(--gray-2))
+  );
+  background: -webkit-linear-gradient(
+    top left,
+    var(--gray-3) 50%,
+    var(--gray-2) 50%
+  );
+  background: -o-linear-gradient(
+    top left,
+    var(--gray-3) 50%,
+    var(--gray-2) 50%
+  );
+  background: linear-gradient(
+    to bottom right,
+    var(--gray-3) 50%,
+    var(--gray-2) 50%
+  );
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+@media screen and (min-width: 900px) {
+  #section-5 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.section-5-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.section-5-form fieldset {
+  all: unset;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.section-5-form-group {
+  background-color: var(--gray-5);
+  border-radius: 10px;
+  display: flex;
+  align-items: start;
+  justify-content: left;
+  padding: 25px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.section-5-form-group:not(:last-child) {
+  margin-bottom: 5px;
+}
+@media screen and (min-width: 900px) {
+  .section-5-form-group:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+.section-5-form-group:not(:first-child) {
+  margin-top: 5px;
+}
+@media screen and (min-width: 900px) {
+  .section-5-form-group:not(:first-child) {
+    margin-top: 10px;
+  }
+}
+
+.section-5-form-group label {
+  font-weight: 700;
+  color: var(--black);
+  font-size: 18px;
+  margin-right: 15px;
+  white-space: nowrap;
+}
+
+.section-5-form-group input,
+.section-5-form-group textarea {
+  height: 100%;
+  font-weight: 400;
+  color: var(--white);
+  font-size: 18px;
+  background-color: transparent;
+  border: 0;
+  flex-grow: 1;
+  outline: none;
+  caret-color: var(--black);
+}
+
+.section-5-form-group input::placeholder,
+.section-5-form-group textarea::placeholder {
+  color: var(--gray-4);
+}
+
+.section-5-form-group-mail,
+.section-5-form-group-phone {
+  width: 100%;
+}
+@media screen and (min-width: 900px) {
+  .section-5-form-group-mail,
+  .section-5-form-group-phone {
+    width: 49%;
+  }
+}
+
+.section-5-form-group-message textarea {
+  height: 160px;
+  resize: vertical;
+  min-height: 21px;
+  position: relative;
+  top: -1px;
+}
+
+.section-5-form-group-button-wrapper {
+  width: 100%;
+}
+
+.section-5-form-group-button-wrapper button {
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: 700;
+  border-radius: 10px;
+  height: 60px;
+  width: 160px;
+  font-size: 18px;
+  margin-top: 20px;
+  outline: none;
+}
