@@ -30,8 +30,7 @@ html {
 }
 @media screen and (min-width: 900px) {
   .page > * {
-    padding: 0px 100px;
-    padding: 0 calc((100vw - 1336px) / 2);
+    padding: 0 max(calc((100vw - 1336px) / 2), 100px);
   }
 }
 
