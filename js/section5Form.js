@@ -20,49 +20,16 @@ function formSubmit(event) {
   event.target.reset();
 }
 
-function stringify_object(object, depth = 0, max_depth = 2) {
-  // change max_depth to see more levels, for a touch event, 2 is good
-  if (depth > max_depth) return "Object";
-
-  const obj = {};
-  for (let key in object) {
-    let value = object[key];
-    if (value instanceof Node)
-      // specify which properties you want to see from the node
-      value = { id: value.id };
-    else if (value instanceof Window) value = "Window";
-    else if (value instanceof Object)
-      value = stringify_object(value, depth + 1, max_depth);
-
-    obj[key] = value;
-  }
-
-  return depth ? obj : JSON.stringify(obj);
-}
-
-function mask(event, input, maskType) {
-  alert(stringify_object(event));
-  if (
-    event.key.length === 1 &&
-    event.altKey == false &&
-    event.ctrlKey == false
-  ) {
-    maskSwitch(event.key, input, maskType);
-  } else if (event.code == "Backspace") {
-    setTimeout(() => maskSwitch("", input, maskType));
-  }
-}
-
-function maskSwitch(newChar, input, maskType) {
+function mask(input, maskType) {
   switch (maskType) {
     case "phone":
-      input.value = phoneMask(input.value, newChar);
+      input.value = phoneMask(input.value);
       break;
   }
 }
 
-function phoneMask(value, newChar) {
-  let onlyNumbers = (value + newChar).replace(/\D/g, "");
+function phoneMask(value) {
+  let onlyNumbers = value.replace(/\D/g, "");
   let masked = "";
   for (var i = 0; i < onlyNumbers.length; i++) {
     let char = onlyNumbers.charAt(i);
@@ -98,9 +65,7 @@ function phoneMask(value, newChar) {
       }
     }
 
-    if (!newChar || i != onlyNumbers.length - 1) {
-      masked += char;
-    }
+    masked += char;
   }
   return masked;
 }
