@@ -15,6 +15,6 @@ yarn
 ### Compiles and minifies for production
 
 ```
-yarn gulp
-./open build/index.html file
+yarn build
+./build/index.html
 ```
