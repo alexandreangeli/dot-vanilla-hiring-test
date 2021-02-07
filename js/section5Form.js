@@ -34,35 +34,17 @@ function phoneMask(value) {
   for (var i = 0; i < onlyNumbers.length; i++) {
     let char = onlyNumbers.charAt(i);
 
-    if (onlyNumbers.length < 11) {
-      switch (i) {
-        case 0:
-          masked += "(";
-          break;
-        case 2:
-          masked += ")";
-          masked += " ";
-          break;
-        case 6:
-          masked += "-";
-          break;
-      }
-    } else {
-      switch (i) {
-        case 0:
-          masked += "(";
-          break;
-        case 2:
-          masked += ")";
-          masked += " ";
-          break;
-        case 3:
-          masked += " ";
-          break;
-        case 7:
-          masked += "-";
-          break;
-      }
+    switch (i) {
+      case 0:
+        masked += "(";
+        break;
+      case 2:
+        masked += ")";
+        masked += " ";
+        break;
+      case onlyNumbers.length < 11 ? 6 : 7:
+        masked += "-";
+        break;
     }
 
     masked += char;
