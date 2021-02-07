@@ -5,6 +5,7 @@ var cleanCss = require("gulp-clean-css");
 var rev = require("gulp-rev");
 var revReplace = require("gulp-rev-replace");
 var htmlreplace = require("gulp-html-replace");
+var htmlmin = require("gulp-htmlmin");
 var del = require("del");
 
 gulp.task("clean", function () {
@@ -50,14 +51,6 @@ gulp.task("pack-css", function () {
     .pipe(gulp.dest("dist"));
 });
 
-gulp.task("copy-img", function () {
-  return gulp.src(["src/img/*"]).pipe(gulp.dest("dist/img"));
-});
-
-gulp.task("copy-favicon", function () {
-  return gulp.src(["src/favicon.ico"]).pipe(gulp.dest("dist"));
-});
-
 gulp.task("pack-html", function () {
   var manifest = gulp.src("dist/rev-manifest.json");
 
@@ -72,7 +65,21 @@ gulp.task("pack-html", function () {
       })
     )
     .pipe(revReplace({ manifest: manifest }))
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+        removeComments: true,
+      })
+    )
     .pipe(gulp.dest("dist"));
+});
+
+gulp.task("copy-img", function () {
+  return gulp.src(["src/img/*"]).pipe(gulp.dest("dist/img"));
+});
+
+gulp.task("copy-favicon", function () {
+  return gulp.src(["src/favicon.ico"]).pipe(gulp.dest("dist"));
 });
 
 gulp.task(
@@ -81,8 +88,8 @@ gulp.task(
     "clean",
     "pack-js",
     "pack-css",
+    "pack-html",
     "copy-img",
-    "copy-favicon",
-    "pack-html"
+    "copy-favicon"
   )
 );
