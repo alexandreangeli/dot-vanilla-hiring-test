@@ -67,7 +67,7 @@ gulp.task("pack-html", function () {
     })
     .pipe(
       htmlreplace({
-        css: "cs/stylesheet.css",
+        css: "css/stylesheet.css",
         js: "js/bundle.js",
       })
     )
