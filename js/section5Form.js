@@ -20,10 +20,10 @@ function formSubmit(event) {
   event.target.reset();
 }
 
-function mask(input, maskType) {
+function mask(event, maskType) {
   switch (maskType) {
     case "phone":
-      input.value = phoneMask(input.value);
+      event.target.value = phoneMask(event.target.value);
       break;
   }
 }
