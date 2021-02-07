@@ -16,5 +16,5 @@ yarn
 
 ```
 yarn build
-./build/index.html
+./dist/index.html
 ```

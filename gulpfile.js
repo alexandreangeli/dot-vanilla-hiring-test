@@ -8,7 +8,7 @@ var htmlreplace = require("gulp-html-replace");
 var del = require("del");
 
 gulp.task("clean", function () {
-  return del(["build"]);
+  return del(["dist"]);
 });
 
 gulp.task("pack-js", function () {
@@ -24,14 +24,14 @@ gulp.task("pack-js", function () {
       })
     )
     .pipe(rev())
-    .pipe(gulp.dest("build/js"))
+    .pipe(gulp.dest("dist/js"))
     .pipe(
-      rev.manifest("build/rev-manifest.json", {
-        base: "build/",
+      rev.manifest("dist/rev-manifest.json", {
+        base: "dist/",
         merge: true,
       })
     )
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("dist"));
 });
 
 gulp.task("pack-css", function () {
@@ -40,26 +40,26 @@ gulp.task("pack-css", function () {
     .pipe(concat("stylesheet.css"))
     .pipe(cleanCss())
     .pipe(rev())
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("dist/css"))
     .pipe(
-      rev.manifest("build/rev-manifest.json", {
-        base: "build/",
+      rev.manifest("dist/rev-manifest.json", {
+        base: "dist/",
         merge: true,
       })
     )
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("dist"));
 });
 
 gulp.task("copy-img", function () {
-  return gulp.src(["src/img/*"]).pipe(gulp.dest("build/img"));
+  return gulp.src(["src/img/*"]).pipe(gulp.dest("dist/img"));
 });
 
 gulp.task("copy-favicon", function () {
-  return gulp.src(["src/favicon.ico"]).pipe(gulp.dest("build"));
+  return gulp.src(["src/favicon.ico"]).pipe(gulp.dest("dist"));
 });
 
 gulp.task("pack-html", function () {
-  var manifest = gulp.src("build/rev-manifest.json");
+  var manifest = gulp.src("dist/rev-manifest.json");
 
   return gulp
     .src(["src/**/*.html"], {
@@ -72,7 +72,7 @@ gulp.task("pack-html", function () {
       })
     )
     .pipe(revReplace({ manifest: manifest }))
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("dist"));
 });
 
 gulp.task(
