@@ -1,6 +1,6 @@
 var gulp = require("gulp");
 var concat = require("gulp-concat");
-var minify = require("gulp-minify");
+var uglify = require("gulp-uglify");
 var cleanCss = require("gulp-clean-css");
 var rev = require("gulp-rev");
 var revReplace = require("gulp-rev-replace");
@@ -16,14 +16,7 @@ gulp.task("pack-js", function () {
   return gulp
     .src(["src/js/*.js"])
     .pipe(concat("bundle.js"))
-    .pipe(
-      minify({
-        ext: {
-          min: ".js",
-        },
-        noSource: true,
-      })
-    )
+    .pipe(uglify())
     .pipe(rev())
     .pipe(gulp.dest("dist/js"))
     .pipe(
