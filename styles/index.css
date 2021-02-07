@@ -31,8 +31,8 @@ html {
 }
 @media screen and (min-width: 900px) {
   .page > * {
-    padding-left: 0 Max(calc((100vw - 1336px) / 2), 100px);
-    padding-right: 0 Max(calc((100vw - 1336px) / 2), 100px);
+    padding-left: Max(calc((100vw - 1336px) / 2), 100px);
+    padding-right: Max(calc((100vw - 1336px) / 2), 100px);
   }
 }
 
