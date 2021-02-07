@@ -2,7 +2,7 @@
   "name": "dot-vanilla-hiring-test",
   "main": "index.js",
   "scripts": {
-    "dev": "yarn gulp"
+    "build": "yarn gulp"
   },
   "license": "ISC",
   "devDependencies": {
