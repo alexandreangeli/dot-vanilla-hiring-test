@@ -51,7 +51,7 @@
   background-color: var(--gray-5);
   border-radius: 10px;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: left;
   padding: 25px;
   box-sizing: border-box;
