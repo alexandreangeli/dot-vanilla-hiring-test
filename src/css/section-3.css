@@ -57,13 +57,13 @@
 .section-3-title {
   margin-top: 0;
   color: var(--white);
-  font-size: 36;
+  font-size: 36px;
   font-weight: 700;
 }
 
 .section-3-description {
   color: var(--white);
-  font-size: 16;
+  font-size: 16px;
   font-weight: 400;
 }
 
