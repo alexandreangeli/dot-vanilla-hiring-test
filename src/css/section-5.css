@@ -125,6 +125,7 @@
 }
 
 .section-5-form-group-button-wrapper button {
+  cursor: pointer;
   background-color: var(--white);
   color: var(--black);
   font-weight: 700;
